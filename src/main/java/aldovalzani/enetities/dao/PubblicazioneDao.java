@@ -2,8 +2,12 @@ package aldovalzani.enetities.dao;
 
 import aldovalzani.enetities.Pubblicazione;
 import aldovalzani.enetities.exceptions.NotFoundException;
+import aldovalzani.enetities.pubblChild.Libro;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.TypedQuery;
+
+import java.util.List;
 
 public class PubblicazioneDao {
     private final EntityManager em2;
@@ -40,9 +44,17 @@ public class PubblicazioneDao {
             } else {
                 System.out.println("Nessuna pubblicazione con isbn " + cod_isbn);
             }
-        } catch (Exception ex) {
-            System.out.println("Oops c'è qualcosa che non va");
+        } catch (IllegalArgumentException ex) {
+            System.out.println("Devi inserire un long");
         }
-
     }
+
+    public List<Libro> findByAutore(String autore) {
+        TypedQuery<Libro> query = em2.createQuery
+                ("select l from Libro l where l.autore = :autore", Libro.class);
+        query.setParameter("autore", autore);
+        return query.getResultList();
+    }
+
+
 }
