@@ -15,6 +15,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Application {
     private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("catalogo_biblioteca");
@@ -54,7 +55,12 @@ public class Application {
 
         //prestDao.save(pre1);
 
-        pubDao.deleteByIsbn(502);
+        //pubDao.deleteByIsbn(502);
+        String autore = "J.R.R. Tolkien";
+        List<Libro> libriPerAutore = pubDao.findByAutore(autore);
+        System.out.println("Libro di " + autore + ":");
+        libriPerAutore.forEach(libro -> System.out.println(libro.getTitolo()));
+
         em.close();
         emf.close();
 
