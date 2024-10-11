@@ -52,9 +52,9 @@ public class Application {
         //pubDao.save(r1);
         //pubDao.save(r2);
 
-        prestDao.save(pre1);
+        //prestDao.save(pre1);
 
-
+        pubDao.deleteByIsbn(502);
         em.close();
         emf.close();
 

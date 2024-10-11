@@ -27,4 +27,22 @@ public class PubblicazioneDao {
         if (found == null) throw new NotFoundException(cod_isbn);
         return found;
     }
+
+    public void deleteByIsbn(long cod_isbn) {
+        EntityTransaction transaction = em2.getTransaction();
+        try {
+            transaction.begin();
+            Pubblicazione pubbTrovata = findByIsbn(cod_isbn);
+            if (pubbTrovata != null) {
+                em2.remove(pubbTrovata);
+                transaction.commit();
+                System.out.println("Pubblicazione con isbn " + cod_isbn + " è stato eliminato");
+            } else {
+                System.out.println("Nessuna pubblicazione con isbn " + cod_isbn);
+            }
+        } catch (Exception ex) {
+            System.out.println("Oops c'è qualcosa che non va");
+        }
+
+    }
 }
