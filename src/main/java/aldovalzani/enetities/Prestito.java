@@ -33,4 +33,49 @@ public class Prestito {
         this.restituzioneEffettiva = restituzioneEffettiva;
         this.utente = utente;
     }
+
+    public LocalDate getDataPrestito() {
+        return dataPrestito;
+    }
+
+    public void setDataPrestito(LocalDate dataPrestito) {
+        this.dataPrestito = dataPrestito;
+    }
+
+    public long getIdPrestito() {
+        return idPrestito;
+    }
+
+
+    public Pubblicazione getPubbPrestato() {
+        return pubbPrestato;
+    }
+
+    public void setPubbPrestato(Pubblicazione pubbPrestato) {
+        this.pubbPrestato = pubbPrestato;
+    }
+
+    public LocalDate getRestituzioneEffettiva() {
+        return restituzioneEffettiva;
+    }
+
+    public void setRestituzioneEffettiva(LocalDate restituzioneEffettiva) {
+        this.restituzioneEffettiva = restituzioneEffettiva;
+    }
+
+    public LocalDate getRestituzionePrevista() {
+        return restituzionePrevista;
+    }
+
+    public void setRestituzionePrevista(LocalDate restituzionePrevista) {
+        this.restituzionePrevista = restituzionePrevista;
+    }
+
+    public Utente getUtente() {
+        return utente;
+    }
+
+    public void setUtente(Utente utente) {
+        this.utente = utente;
+    }
 }

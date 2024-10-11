@@ -21,4 +21,12 @@ public class Rivista extends Pubblicazione {
         super(numPagine, titolo, annoDiPubblicazione);
         this.periodicita = periodicita;
     }
+
+    public Periodicita getPeriodicita() {
+        return periodicita;
+    }
+
+    public void setPeriodicita(Periodicita periodicita) {
+        this.periodicita = periodicita;
+    }
 }
