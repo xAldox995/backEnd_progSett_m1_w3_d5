@@ -28,15 +28,7 @@ public class Libro extends Pubblicazione {
         return autore;
     }
 
-    public void setAutore(String autore) {
-        this.autore = autore;
-    }
-
     public GenLibro getGenere() {
         return genere;
-    }
-
-    public void setGenere(GenLibro genere) {
-        this.genere = genere;
     }
 }

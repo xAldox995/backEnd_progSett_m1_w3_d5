@@ -25,8 +25,5 @@ public class Rivista extends Pubblicazione {
     public Periodicita getPeriodicita() {
         return periodicita;
     }
-
-    public void setPeriodicita(Periodicita periodicita) {
-        this.periodicita = periodicita;
-    }
+    
 }

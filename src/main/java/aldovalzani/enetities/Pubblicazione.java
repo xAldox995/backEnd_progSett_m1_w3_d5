@@ -32,20 +32,15 @@ public abstract class Pubblicazione {
         return annoDiPubblicazione;
     }
 
-    public void setAnnoDiPubblicazione(LocalDate annoDiPubblicazione) {
-        this.annoDiPubblicazione = annoDiPubblicazione;
+    public long getCod_isbn() {
+        return cod_isbn;
     }
 
     public int getNumPagine() {
         return numPagine;
     }
 
-    public void setNumPagine(int numPagine) {
-        this.numPagine = numPagine;
-    }
-
-
-    public void setCod_isbn(long cod_isbn) {
-        this.cod_isbn = cod_isbn;
+    public String getTitolo() {
+        return titolo;
     }
 }
